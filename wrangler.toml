@@ -1,0 +1,6 @@
+name = "uni"
+type = "javascript"
+account_id = "16b86ab1ab5148757648244578ed834d"
+workers_dev = true
+route = ""
+zone_id = ""

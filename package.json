@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "name": "{{ project-name }}",
+  "version": "1.0.0",
+  "description": "university request detection",
+  "main": "worker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "{{ authors }}"
+}
