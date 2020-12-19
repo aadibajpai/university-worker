@@ -19,10 +19,12 @@ async function handleRequest(request) {
     const found = await fetch(query)
       .then(response => response.json())
       .then(data => {
-        const isp = data.isp
-        if (valid.find(v => isp.toLowerCase().includes(v))) return isp
-        const org = data.org
-        if (valid.find(v => org.toLowerCase().includes(v))) return org
+        if (data.status === "success") {
+          const isp = data.isp
+          if (valid.find(v => isp.toLowerCase().includes(v))) return isp
+          const org = data.org
+          if (valid.find(v => org.toLowerCase().includes(v))) return org
+        }
         return ""
       });
 
