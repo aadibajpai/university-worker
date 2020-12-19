@@ -9,7 +9,7 @@ valid = ["university", "college", "institute"]
  * @param {Request} request
  */
 async function handleRequest(request) {
-  const clientIP = request.headers.get("CF-Connecting-IP")
+  const clientIP = request.headers.get("x-lookup-ip") || request.headers.get("CF-Connecting-IP")
   const query = `${LOOKUP}${clientIP}`
   const url = new URL(request.url)
   const referer = request.headers.get("Referer") || url
