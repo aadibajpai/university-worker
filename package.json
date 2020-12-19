@@ -5,7 +5,11 @@
   "description": "university request detection",
   "main": "worker.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
-  "author": "{{ authors }}"
+  "author": "{{ authors }}",
+  "devDependencies": {
+    "@dollarshaveclub/cloudworker": "^0.1.2",
+    "mocha": "^8.2.1"
+  }
 }
