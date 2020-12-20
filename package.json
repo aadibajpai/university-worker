@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "{{ project-name }}",
+  "name": "university-worker",
   "version": "1.0.0",
   "description": "university request detection",
   "main": "worker.js",
@@ -11,5 +11,9 @@
   "devDependencies": {
     "@dollarshaveclub/cloudworker": "^0.1.2",
     "mocha": "^8.2.1"
+  },
+  "dependencies": {
+    "form-data": "^3.0.0",
+    "whatwg-fetch": "^3.5.0"
   }
 }

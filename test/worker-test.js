@@ -1,15 +1,12 @@
-before(async function () {
-   Object.assign(global, new (require('@dollarshaveclub/cloudworker'))(require('fs').readFileSync('worker.js', 'utf8')).context);
-});
-
-// You will replace worker.js with the relative path to your worker
+const { handleRequest } = require("../handleRequest.js")
+const { Headers } = require('whatwg-fetch')
 
 const assert = require('assert')
 
 function fakeReq(ip) {
     let fake = new Headers()
     fake.append("CF-Connecting-IP", ip)
-    fake.append("Referer", "thisisatest")
+    fake.append("Referer", "mocha.test")
 
     let init = {
         method: "GET",
@@ -21,8 +18,7 @@ function fakeReq(ip) {
 }
 
 describe('Worker Test', function() {
-
-    it('returns stanford for stanford request', async function () {
+    it('Returns Stanford for Stanford IP Request', async function () {
         let req = fakeReq("128.12.122.154")
         let res = await handleRequest(req)
         let body = await res.text()
